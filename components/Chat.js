@@ -3,13 +3,15 @@
 import { useEffect, useState } from "react";
 import io from "socket.io-client";
 
-let socket = io();
+let socket;
 // socket = io();
 export default function Chat() {
   const [message, setMessage] = useState("");
   const [messages, setMessages] = useState([]);
 
   useEffect(() => {
+    socket = io();
+
     socket.on("setDone", (elem) => {
       setMessages((prevState) =>
         prevState.map((item, index) =>
