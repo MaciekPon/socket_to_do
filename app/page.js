@@ -1,12 +1,5 @@
-'use client'
-import Chat from "@/components/Chat";
-import { useEffect } from "react";
+import HomePage from "@/components/HomePage";
 
 export default function Home() {
-  useEffect(() => {
-    fetch("/api/socket"); // Initialize the WebSocket server
-  }, []);
-  return (
-    <Chat />
-  );
+  return <HomePage />;
 }
