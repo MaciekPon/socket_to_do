@@ -1,6 +1,7 @@
 import { Server } from "socket.io";
 
 export default function handler(req, res) {
+    console.log(res.socket.server)
     if (!res.socket.server.io) {
         console.log("Starting socket.io server...");
         const io = new Server(res.socket.server);
